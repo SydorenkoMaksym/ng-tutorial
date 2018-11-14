@@ -36,11 +36,4 @@ export class HeroSearchComponent implements OnInit {
       switchMap((term: string) => this.heroService.searchHeroes(term)),
     );
   }
-
-  private searchTerms = new Subject<string>();
-
-  // Push a search term into the observable stream.
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
 }
